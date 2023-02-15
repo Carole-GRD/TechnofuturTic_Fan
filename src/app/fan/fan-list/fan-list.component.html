@@ -2,11 +2,11 @@
 <article *ngFor="let fan of fanList">
     <div>
         <p>{{ fan.name }}</p>
-        <p>{{ fan.birthDate | date:'dd-MM-yyyy' }}</p>
+        <p>{{ fan.birthDate| date:'dd-MM-yyyy' }}</p>
     </div>
 
     <div class="btn">
-        <a routerLink="/fan/{{+fan.id}}">
+        <a routerLink="fan/{{fan.id}}">
             <button type="button">DETAILS</button>
         </a>
         <button type="button">DELETE</button>
@@ -15,3 +15,5 @@
 </article>
 
 <div class="line"></div>
+
+<router-outlet />

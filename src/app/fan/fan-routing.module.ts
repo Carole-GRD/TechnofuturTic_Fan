@@ -1,9 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FanSeriesComponent } from './fan-series/fan-series.component';
+import { FanCreateComponent } from './fan-create/fan-create.component';
+import { FanListComponent } from './fan-list/fan-list.component';
+
 
 const routes: Routes = [
-  { path: 'fan/:id', component: FanSeriesComponent }
+  {
+    path: '',
+    component: FanListComponent,
+    children: [
+      {
+        path: 'create',
+        component: FanCreateComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
