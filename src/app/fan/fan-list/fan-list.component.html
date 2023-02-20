@@ -1,3 +1,14 @@
+<section>
+
+    <div>
+        <h2>Fan List</h2>
+    </div>
+
+    <div>
+        <button type="button" (click)="toCreate()" >ADD FAN</button>
+    </div>
+
+</section>
 
 <article *ngFor="let fan of fanList">
     <div>
@@ -6,7 +17,7 @@
     </div>
 
     <div class="btn">
-        <a routerLink="fan/{{fan.id}}">
+        <a routerLink="{{fan.id}}">
             <button type="button">DETAILS</button>
         </a>
         <button type="button">DELETE</button>

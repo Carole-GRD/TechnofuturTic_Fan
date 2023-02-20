@@ -1,6 +1,5 @@
-import { Component, OnInit, /*EventEmitter, Output*/ } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { LastSegmentService } from 'src/app/services/last-segment.service';
+import { Component, OnInit } from '@angular/core';
+import { Fan } from 'src/app/types/Fan';
 
 @Component({
   selector: 'app-fan-create',
@@ -8,22 +7,12 @@ import { LastSegmentService } from 'src/app/services/last-segment.service';
   styleUrls: ['./fan-create.component.scss']
 })
 export class FanCreateComponent implements OnInit {
+  fan?: Fan
 
-  lastSegment!: string;
 
-  constructor(
-    private _activatedRouter: ActivatedRoute,
-    private _lastSegmentService: LastSegmentService
-  ) {}
+  constructor() {}
 
   ngOnInit() {
-    this.lastSegment  = this._activatedRouter.snapshot.url[this._activatedRouter.snapshot.url.length -1].path;
-    console.log('fan : ', this.lastSegment ); 
-    // OU 
-    // this.segment  = this._activatedRouter.snapshot.url;
-    // this.lastSegment = this.segment.pop().path;
-    // console.log(this.lastSegment ); 
-
-    this._lastSegmentService.lastSegment = this.lastSegment;
+   
   }
 }

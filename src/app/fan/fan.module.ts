@@ -7,6 +7,7 @@ import { FanListComponent } from './fan-list/fan-list.component';
 import { FanSeriesComponent } from './fan-series/fan-series.component';
 import { RouterModule } from '@angular/router';
 import { FanCreateComponent } from './fan-create/fan-create.component';
+import { FanSeriesEditComponent } from './fan-series-edit/fan-series-edit.component';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { FanCreateComponent } from './fan-create/fan-create.component';
     HomeComponent,
     FanListComponent,
     FanSeriesComponent,
-    FanCreateComponent
+    FanCreateComponent,
+    FanSeriesEditComponent,
+
   ],
   imports: [
     CommonModule,

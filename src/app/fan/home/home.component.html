@@ -1,18 +1,5 @@
 <h1>Fan</h1>
 
- 
-<section *ngIf="lastSegment !== 'edit'">
-    <div>
-        <!-- <h2>Fan List</h2> -->
-        <h2>{{ ( lastSegment !== 'fans' && lastSegment !== 'create' ) ? '' : 'Fan List'}}</h2>
-    </div>
-    <div>
-        <button type="button" (click)="toCreate()" >
-            <!-- ADD FAN -->
-            {{ ( lastSegment !== 'fans' && lastSegment !== 'create' )  ? 'UPDATE FAN' : 'ADD FAN'}}
-        </button>
-    </div>
-</section>
 
 
 <router-outlet />

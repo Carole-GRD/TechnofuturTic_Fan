@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { FanService } from 'src/app/services/fan.service';
 import { Fan } from 'src/app/types/Fan';
 
@@ -11,6 +10,8 @@ import { Fan } from 'src/app/types/Fan';
 })
 export class FanSeriesComponent {
   fan?: Fan
+
+
 
   constructor(
     private _fanService: FanService,
@@ -25,7 +26,12 @@ export class FanSeriesComponent {
     this.fan = this._fanService.getOne(parseInt(id));
     
 		if (!this.fan) {
-			this._router.navigate(['/fan']);
-		}
+			this._router.navigate(['/fans']);
+		} 
   }
+
+  toUpdate() {
+    this._router.navigateByUrl('/fans/:id/edit')
+  }
+  
 }
